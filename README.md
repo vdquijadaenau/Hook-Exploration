@@ -9,8 +9,8 @@ This repo is based on the incredible job done by all the contributors of [usehoo
 
 ## List of hooks on this library
 
-[useBoolean()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useBoolean)
-[useClickAnyWhere()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useClickAnyWhere)
-[useEventListener()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useEventListener)
-[useIsomorphicLayoutEffect()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useIsomorphicLayoutEffect)
+- [useBoolean()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useBoolean)
+- [useClickAnyWhere()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useClickAnyWhere)
+- [useEventListener()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useEventListener)
+- [useIsomorphicLayoutEffect()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useIsomorphicLayoutEffect)
 
