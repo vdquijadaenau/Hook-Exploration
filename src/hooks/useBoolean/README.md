@@ -1,6 +1,5 @@
 # useBoolean
 
-
     import React from 'react'
 
     import { useBoolean } from 'usehooks-ts'
@@ -13,13 +12,13 @@
 
         return (
             <>
-            <p>
-                Value is <code>{value.toString()}</code>
-            </p>
-            <button onClick={setTrue}>set true</button>
-            <button onClick={setFalse}>set false</button>
-            <button onClick={toggle}>toggle</button>
-            <button onClick={customToggle}>custom toggle</button>
+                <p>
+                    Value is <code>{value.toString()}
+                </p>
+                <button onClick={setTrue}>set true</button>
+                <button onClick={setFalse}>set false</button>
+                <button onClick={toggle}>toggle</button>
+                <button onClick={customToggle}>custom toggle</button>
             </>
         )
     }

@@ -24,7 +24,7 @@ function useEventListener<KW extends keyof WindowEventMap,KH extends keyof HTMLE
     const savedHandler = useRef(handler)
 
     useIsomorphicLayoutEffect(() => {
-        savedHandler.current =handler
+        savedHandler.current = handler
     },[handler])
 
     useEffect(() => {
