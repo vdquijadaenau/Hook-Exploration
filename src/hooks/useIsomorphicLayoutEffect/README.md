@@ -1,1 +1,3 @@
-How to use this hook
+# useIsomorphicLayoutEffect
+
+WIP
