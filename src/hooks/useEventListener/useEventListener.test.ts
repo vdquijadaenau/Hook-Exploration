@@ -72,27 +72,29 @@ describe('useEventListener()', () => {
   });
 
   it('should call the event listener handler when the event is triggered', () => {
+    const refDiv = { current: document.createElement('div') };
     const eventName = 'click';
     const handler = jest.fn();
 
-    renderHook(() => useEventListener(eventName, handler, ref));
+    renderHook(() => useEventListener(eventName, handler, refDiv));
 
-    fireEvent.click(ref.current);
+    fireEvent.click(refDiv.current);
 
-    // expect(handler).toHaveBeenCalledTimes(1);
+    expect(handler).toHaveBeenCalledTimes(1);
   });
 
   it('should have the correct event type', () => {
+    const refDiv = { current: document.createElement('div') };
     const clickHandler = jest.fn();
     const keydownHandler = jest.fn();
 
-    renderHook(() => useEventListener('click', clickHandler, ref));
-    renderHook(() => useEventListener('keydown', keydownHandler, ref));
+    renderHook(() => useEventListener('click', clickHandler, refDiv));
+    renderHook(() => useEventListener('keydown', keydownHandler, refDiv));
 
-    fireEvent.click(ref.current);
-    fireEvent.keyDown(ref.current);
+    fireEvent.click(refDiv.current);
+    fireEvent.keyDown(refDiv.current);
 
-    // expect(clickHandler).toHaveBeenCalledWith(expect.any(clickHandler);
-    // expect(keydownHandler).toHaveBeenCalledWith(expect.any(KeyboardEvent));
+    expect(clickHandler).toHaveBeenCalledWith(expect.any(MouseEvent));
+    expect(keydownHandler).toHaveBeenCalledWith(expect.any(KeyboardEvent));
   });
 });

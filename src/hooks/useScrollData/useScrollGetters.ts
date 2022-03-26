@@ -24,7 +24,7 @@ export function getTotalDistanceX(x: number, frameValues: ScrollData): number {
   return frameValues.totalDistance.x + Math.abs(x - frameValues.position.x);
 }
 
-export function getTotalDistancey(y: number, frameValues: ScrollData): number {
+export function getTotalDistanceY(y: number, frameValues: ScrollData): number {
   return frameValues.totalDistance.y + Math.abs(y - frameValues.position.y);
 }
 
