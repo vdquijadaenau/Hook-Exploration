@@ -1,4 +1,3 @@
-  
 <br>
 <h1> An Exploration of Hooks for React and Gatsby Apps  </h1>
 
@@ -11,6 +10,15 @@ This repo is based on the incredible job done by all the contributors of [usehoo
 
 - [useBoolean()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useBoolean)
 - [useClickAnyWhere()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useClickAnyWhere)
+- useCopyToClipboard()
+- useCountDown()
+- useCounter()
+- useDarkMode()
 - [useEventListener()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useEventListener)
+- useInterval()
+- useIsFirstRender()
 - [useIsomorphicLayoutEffect()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useIsomorphicLayoutEffect)
-
+- useLocalStorage()
+- useMediaQuery()
+- useScrollData()
+- useUpdateEffect()
