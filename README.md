@@ -14,6 +14,7 @@ This repo is based on the incredible job done by all the contributors of [usehoo
 - useCountDown()
 - useCounter()
 - useDarkMode()
+- useDebounce()
 - [useEventListener()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useEventListener)
 - useInterval()
 - useIsFirstRender()
