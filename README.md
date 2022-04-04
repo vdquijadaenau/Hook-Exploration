@@ -31,5 +31,6 @@ This repo is based on the incredible job done by all the contributors of [usehoo
 - [useLockedBody()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useLockedBody)
 - [useMap()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useMap)
 - [useMediaQuery()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useMediaQuery)
+- useOnClickOutside()
 - [useScrollData()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useScrollData)
 - [useUpdateEffect()](https://github.com/vdquijadaenau/Hook-Exploration/tree/main/src/hooks/useUpdateEffect)
