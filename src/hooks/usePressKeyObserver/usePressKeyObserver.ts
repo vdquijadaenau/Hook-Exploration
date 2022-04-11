@@ -20,7 +20,7 @@ function usePressKeyObserver({ watchKey }: Settings): Ispressed {
 
   useEffect(() => {
     function handlePressStart({ code }: KeyboardEvent): void {
-      if (!pressed || !equal(watchKey, code)) return;
+      if (pressed || !equal(watchKey, code)) return;
       setPressed(true);
     }
 
