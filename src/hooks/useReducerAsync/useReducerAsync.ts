@@ -40,6 +40,16 @@ export function useReducerAsync<
 
 export function useReducerAsync<
   R extends Reducer<any, any>,
+  AsyncAction extends { type: string },
+  ExportAction extends AsyncAction | ReducerAction<R> = AsyncAction | ReducerAction<R>,
+>(
+  reducer: R,
+  initialState: ReducerState<R>,
+  asyncActionHandlers: AsyncActionHandlers<R, AsyncAction>,
+): [ReducerState<R>, Dispatch<ExportAction>];
+
+export function useReducerAsync<
+  R extends Reducer<any, any>,
   I,
   AsyncAction extends { type: string },
   ExportAction extends AsyncAction | ReducerAction<R> = AsyncAction | ReducerAction<R>,

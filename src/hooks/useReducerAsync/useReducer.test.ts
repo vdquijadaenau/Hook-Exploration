@@ -1,6 +1,5 @@
-import React, { StrictMode, Reducer } from 'react';
-
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { renderHook, cleanup, act } from '@testing-library/react-hooks/native';
+import { Reducer } from 'react';
 
 import { useReducerAsync, AsyncActionHandlers } from './index';
 
@@ -11,10 +10,13 @@ describe('basic spec', () => {
     type State = {
       sleeping: boolean;
     };
+
     const initialState: State = {
       sleeping: false,
     };
+
     type Action = { type: 'START_SLEEP' } | { type: 'END_SLEEP' };
+
     const reducer: Reducer<State, Action> = (state, action) => {
       switch (action.type) {
         case 'START_SLEEP':
@@ -25,7 +27,9 @@ describe('basic spec', () => {
           throw new Error('no such action type');
       }
     };
+
     type AsyncAction = { type: 'SLEEP'; ms: number };
+
     const asyncActionHandlers: AsyncActionHandlers<Reducer<State, Action>, AsyncAction> = {
       SLEEP:
         ({ dispatch }) =>
@@ -37,32 +41,17 @@ describe('basic spec', () => {
           dispatch({ type: 'END_SLEEP' });
         },
     };
-    //     const Component = () => {
-    //       const [state, dispatch] = useReducerAsync<Reducer<State, Action>, AsyncAction, AsyncAction | Action>(
-    //         reducer,
-    //         initialState,
-    //         asyncActionHandlers,
-    //       );
-    //       return (
-    //         <div>
-    //           <span>{state.sleeping ? 'Sleeping' : 'Idle'}</span>
-    //           <button type='button' onClick={() => dispatch({ type: 'SLEEP', ms: 100 })}>
-    //             Click
-    //           </button>
-    //         </div>
-    //       );
-    //     };
-    //     const App = () =>
-    //       render(
-    //         <StrictMode>
-    //           <Component />
-    //         </StrictMode>,
-    //       );
-    //     const { getAllByText, findAllByText, container } = render(<App />);
-    //     expect(container).toMatchSnapshot();
-    //     fireEvent.click(getAllByText('Click')[0]);
-    //     expect(container).toMatchSnapshot();
-    //     await findAllByText('Idle');
-    //     expect(container).toMatchSnapshot();
+
+    const { result } = renderHook(() =>
+      useReducerAsync<Reducer<State, Action>, AsyncAction, AsyncAction | Action>(reducer, initialState, asyncActionHandlers),
+    );
+
+    expect(result.current[0].sleeping).toBe(false);
+
+    act(() => {
+      result.current[1]({ type: 'START_SLEEP' });
+    });
+
+    expect(result.current[0].sleeping).toBe(true);
   });
 });
