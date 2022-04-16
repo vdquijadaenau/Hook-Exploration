@@ -1,4 +1,3 @@
-import { resourceUsage } from 'process';
 import { useEffect, useReducer, useRef } from 'react';
 
 interface IState<T> {
@@ -64,7 +63,7 @@ function useFetch<T = unknown>(url?: string, options?: RequestInit): IState<T> {
       }
     };
 
-    void fetchData();
+    fetchData();
 
     return () => {
       cancelRequest.current = true;
